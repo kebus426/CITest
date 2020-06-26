@@ -15,4 +15,8 @@ defmodule Example do
   def hello do
     :world
   end
+
+  def good do
+    :bye
+  end
 end
