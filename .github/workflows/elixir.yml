@@ -7,15 +7,15 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
-
+  hello_world_job:
     runs-on: ubuntu-latest
-
-    container: Dockerfile
-
+    name: A job to say hello
     steps:
-    - uses: actions/checkout@v2
-    - name: Install Dependencies
-      run: mix deps.get
-    - name: Run Tests
-      run: mix test
+    - name: Hello world action step
+      id: hello
+      uses: actions/CITest
+      with:
+        who-to-greet: 'Mona the Octocat'
+    # Use the output from the `hello` step
+    - name: Get the output time
+      run: echo "YES"
